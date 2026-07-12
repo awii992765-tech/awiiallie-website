@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My personal portfolio showcasing projects and skills.">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link href="https://fonts.googleapis.com/css?family=Sora:100,200,300,regular,500,600,700,800" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Bruno+Ace+SC:regular" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>My Skills</title>
+    <style>
+        @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes float {
+    0%,
+    100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes show{
+    0%,
+    49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,
+    100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+html{
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    animation: fadeIn 0.6s ease-out;
+    padding: 0;
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+body{
+    margin: 0;
+    line-height: 1.6;
+    background-color: black;
+    width: 100%;
+}
+header{
+    width: 100%;
+    margin-top: 15px;
+    top: 0;
+    display: flex;
+    left: 0;
+    height: auto;
+    background: transparent;
+    align-items: center;
+    justify-content: space-evenly;
+    filter: drop-shadow(10px);
+    z-index: 1000;
+}
+#menu-icon{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+#menu-icon:hover{
+    transform: translateY(-5px);
+    color: aqua;
+}
+.menu-toggle {
+    padding: 10px 20px;
+}
+/* Sidebar Styles */
+.sidebar {
+    display: none;
+    position: fixed;
+    left: -50%;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to bottom, cyan, rgb(173, 172, 172));
+    padding-top: 80px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 2px 0 15px rgba(67, 97, 238, 0.3);
+}
+.sidebar.active {
+    left: 0;
+}
+.sidebar-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+.sidebar-close:hover {
+    transform: translateY(-5px);
+    color: black;
+}
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+}
+.sidebar-links li {
+    margin: 0;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.sidebar-links li:hover {
+    padding-left: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.sidebar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+.sidebar-links a:hover {
+    color: black;
+}
+.sidebar-links .active{
+    color: black;
+}
+        header .logo {
+            width: 120px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        header .logo:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+nav{
+    height: auto;
+}
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 10px 30px;
+        }
+.navbar a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover{
+    color: aqua;
+    border-bottom: 3px solid;
+}
+.navbar .active{
+    color: aqua;
+    border-bottom: 3px solid;
+}
+
+li:hover{
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.contact{
+    background-color: turquoise;
+    color: white;
+}
+.fa-solid{
+    font-size: 20px;
+    color: aqua;
+
+}
+
+.web-section{
+    padding: 3%;
+    padding-bottom: 1%;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    background-color: black;
+    height: auto;
+}
+.automotive-section{
+    padding: 3%;
+    padding-top: 1%;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    background-color: black;
+    height: auto;
+}
+.web-container, .automotive-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 5%;
+}
+.web-section h1{
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 0.5px;
+    font-family: "Sora", sans-serif;
+}
+.web-container h3, .automotive-container h3{
+    font-size: 25px;
+    font-weight: 550;
+    font-family: "Sora", sans-serif;
+}
+
+.web-container p, .automotive-container p{
+    font-size: 15px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+}
+.web , .automotive{
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.skill-card{
+    background-color: rgb(20, 20, 20);
+    padding: 20px 60px;
+    border-radius: 20px;
+    width: 250px;
+    height: 100%;
+    max-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 15px rgb(90, 90, 90);
+    transition: all 0.4s ease-in-out;
+    animation: float 3s ease-in-out infinite;
+}
+.skill-card:nth-child(1){
+    animation-delay: 1s;
+}
+.skill-card:nth-child(2){
+    animation-delay: 3s;
+}
+.skill-card:nth-child(3){
+    animation-delay: 5s;
+}
+.skill-card:hover{
+    box-shadow: 0 0 25px rgb(90, 90, 90);
+    transform: translateY(-5px);
+}
+
+.experience{
+    margin-top: 2%;
+}
+.contact , .cta-button{
+    display: inline-block;
+    padding: 15px 50px;
+    background-color: black;
+    border-radius: 80px;
+    font-size: 18px;
+    margin-top: 5px;
+    color: aqua;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    border: 2px solid aqua;
+    transition: all 0.4s ease-in-out;
+}
+.contact:hover , .cta-button:hover{
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(155, 155, 155);
+    background-color: aqua;
+    transform: translateX(5px);
+    color: black;
+}
+
+@media (max-width: 1440px) {
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .web-section,
+    .automotive-section { 
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .skill-card{
+        min-height: 100px;
+        height: 100%;
+        max-width: 320px;
+        width: 100%;
+    }
+}
+@media (max-width: 1000px) {
+        body{
+            width: 100%;
+            overflow-x: hidden;
+        }
+    header {
+        justify-content: space-around;
+        padding: 0 20px;
+    }
+
+            header .logo {
+                margin-left: 1.75%;
+                width: 100px;
+            }
+
+            .navbar ul li {
+                margin: 10px 18px;
+            }
+            .navbar ul li a {
+                font-size: 14px;
+            }
+
+    #menu-icon {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+
+
+    .contact{
+        margin-right: 30%;
+        text-wrap: none;
+        display: inline-block;
+        padding: 10px 40px;
+        background-color: black;
+        border-radius: 80px;
+        font-size: 15px;
+        margin-top: 5px;
+        color: aqua;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        border: 2px solid aqua;
+        transition: all 0.4s ease-in-out;
+    }
+    .cta-button{
+        font-size: 16px;
+    }
+
+    ul, li{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+        gap: 5px;
+        
+    }
+
+    .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .web-section,
+    .automotive-section {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .web-container,
+    .automotive-container {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 3%;
+    }
+    .web , .automotive{
+        margin-top: 4%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .web-section h1,
+    .automotive-section h1 {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 0.5px;
+        font-family: "Sora", sans-serif;
+    }
+
+    .web-container h3,
+    .automotive-container h3 {
+        font-size: 22px;
+        font-weight: 500;
+        font-family: "Sora", sans-serif;
+    }
+
+    .web-container h4, .automotive-container h4{
+        font-size: 15px;
+        font-weight: 450;
+        font-family: "Sora", sans-serif;
+    }
+
+    .web-container p,
+    .automotive-container p {
+        font-size: 15px;
+        font-weight: 300;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .skill-card{
+        max-height: 150px;
+        height: 100%;
+        max-width: 320px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    header {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+        margin-right: 5%;
+    }
+
+    .sidebar {
+        display: block;
+        left: -100%;
+        width: 230px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+            header .logo {
+                width: 90px;
+                margin-left: 5%;
+            }
+
+    .contact{
+        display: none;
+    }
+
+    .cta-button{
+        font-size: 16px;
+    }
+
+    .sidebar-links a {
+        font-size: 15px;
+    }
+    .experience{
+        padding: 15px 40px;
+        margin-top: 3%;
+    }
+    .web-section,
+    .automotive-section {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .web-container,
+    .automotive-container {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 3%;
+    }
+    .web , .automotive{
+        margin-top: 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .web-section h1,
+    .automotive-section h1 {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 0.5px;
+        font-family: "Sora", sans-serif;
+    }
+
+    .web-container h3,
+    .automotive-container h3 {
+        font-size: 22px;
+        font-weight: 500;
+        font-family: "Sora", sans-serif;
+    }
+
+    .web-container h4, .automotive-container h4{
+        font-size: 15px;
+        font-weight: 450;
+        font-family: "Sora", sans-serif;
+    }
+
+    .web-container p,
+    .automotive-container p {
+        font-size: 15px;
+        font-weight: 300;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .skill-card{
+        max-height: 150px;
+        height: 100%;
+        max-width: 250px;
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="file_00000000a71871f49415f578c30f0133 (2).png" class="logo" alt="Logo">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="skills.html" class="active">Skills</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+            <div class="contact-button">
+                <a href="contact.html"><button class="contact">Contact Me</button></a>
+            </div>
+
+            <div class="menu-toggle" id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+    <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="sidebar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </aside>
+    </header>
+    <section class="web-section">
+        <center><h1>My Skills</h1></center>
+        <div class="web-container">
+            <div class="web-card">
+                <h3>Frontend Development</h3>
+                <p>I'm a designer and developer proficient in HTML, CSS, JavaScript, and frameworks for building responsive, clean and modern websites. I turn ideas into seamless User Interfaces by understanding user needs and ensuring smooth interactions across different devices.</p>
+                <div class="web">
+                    <div class="skill-card">
+                        <i class="fa-solid fa-code skill-icon"></i>
+                        <h4>Understand User Goals</h4>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-solid fa-paint-brush skill-icon"></i>
+                        <h4>Create Clean Interface Layouts</h4>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-solid fa-mobile-alt skill-icon"></i>
+                        <h4>Implement Responsive Design</h4>
+                    </div>
+                </div>
+                <div class="experience">
+                    <center><a href="portfolio.html"><button class="cta-button">View My Work</button></a></center>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="automotive-section">
+        <div class="automotive-container">
+            <div class="auto-card">
+                <h3>Automotive Design</h3>
+                <p>I convert ideas into aerodynamic and streamlined body designs which emphasise on proportions for different kinds of vehicles. I also turn sketches into real-time detailed 3D models. I design cars, sedans, trucks, buses, nganyas and supercars.</p>
+                <div class="automotive">
+                    <div class="skill-card">
+                        <i class="fa-solid fa-lightbulb skill-icon"></i>
+                        <h4>Conceptualize Vehicle Designs</h4>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-solid fa-cube skill-icon"></i>
+                        <h4>Create Detailed 3D Models</h4>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-solid fa-car skill-icon"></i>
+                        <h4>Design Multiple Vehicle Types</h4>
+                    </div>
+                </div>
+                <div class="experience">
+                    <center><a href="designs.html"><button class="cta-button">View Designs</button></a></center>
+                </div>
+            </div>
+        </div>
+    </section>    
+</body>
+<script>
+// Smooth scroll to section
+    function smoothScroll(targetId) {
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+// Mobile menu toggle
+    function toggleMobileMenu() {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            sidebar.classList.toggle('active');
+        }
+    }
+
+// Sidebar event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-icon');
+        const sidebarClose = document.querySelector('.sidebar-close');
+        const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+        const sidebar = document.getElementById('sidebar');
+
+        // Toggle sidebar on hamburger click
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Close sidebar on X click
+        if (sidebarClose) {
+            sidebarClose.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+            });
+        }
+
+        // Close sidebar when a link is clicked
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+            });
+        });
+
+        // Close sidebar when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (sidebar && menuToggle) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnMenu = menuToggle.contains(event.target);
+                if (!isClickInsideSidebar && !isClickOnMenu && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
+            }
+        });
+    });
+</script>
+</html>

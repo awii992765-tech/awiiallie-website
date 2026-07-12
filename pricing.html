@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link href="https://fonts.googleapis.com/css?family=Sora:100,200,300,regular,500,600,700,800" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Bruno+Ace+SC:regular" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Web Design Packages & Pricing</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0%,
+            100%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+                transform: translateY(5px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes show{
+            0%,
+            49.99%{
+                opacity: 0;
+                z-index: 1;
+            }
+            50%,
+            100%{
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        :root {
+            --primary-color: #0070f3; /* Accent Color */
+            --popular-color: #10b981; /* Green badge/button color */
+            --dark-text: #1f2937;
+            --light-bg: #f9fafb;
+            --border-color: #e5e7eb;
+        }
+
+        html{
+            font-family: "Poppins", sans-serif;
+            scroll-behavior: smooth;
+            margin: 0;
+            animation: fadeIn 0.6s ease-out;
+            padding: 0;
+            color: white;
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        body{
+            margin: 0;
+            line-height: 1.6;
+            background-color: black;
+            width: 100%;
+        }
+        header{
+            width: 100%;
+            margin-top: 15px;
+            top: 0;
+            display: flex;
+            left: 0;
+            height: auto;
+            background: transparent;
+            align-items: center;
+            justify-content: space-evenly;
+            filter: drop-shadow(10px);
+            z-index: 1000;
+        }
+        #menu-icon{
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+        #menu-icon:hover{
+            transform: translateY(-5px);
+            color: aqua;
+        }
+        .menu-toggle {
+            padding: 10px 20px;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            display: none;
+            position: fixed;
+            left: -50%;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(to bottom, cyan, rgb(173, 172, 172));
+            padding-top: 80px;
+            transition: left 0.3s ease-in-out;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: 2px 0 15px rgba(67, 97, 238, 0.3);
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .sidebar-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .sidebar-close:hover {
+            transform: translateY(-5px);
+            color: black;
+        }
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            margin: 0;
+            padding: 20px 0;
+        }
+        .sidebar-links li {
+            margin: 0;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sidebar-links li:hover {
+            padding-left: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .sidebar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+        .sidebar-links a:hover {
+            color: black;
+        }
+        .sidebar-links .active {
+            color: black;
+        }
+        header .logo {
+            width: 120px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        header .logo:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+        nav{
+            height: auto;
+        }
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .navbar ul li a {
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            border-bottom: 3px solid transparent;
+        }
+        .navbar a:hover{
+            color: aqua;
+            border-bottom: 3px solid;
+        }
+        .navbar .active{
+            color: aqua;
+            border-bottom: 3px solid;
+        }
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 10px 30px;
+        }
+        li:hover{
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .contact{
+            background-color: turquoise;
+            color: white;
+        }
+
+        .contact , .get-in-touch, .cta-button{
+            display: inline-block;
+            padding: 15px 50px;
+            background-color: black;
+            border-radius: 80px;
+            font-size: 18px;
+            margin-top: 5px;
+            color: aqua;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            border: 2px solid aqua;
+            transition: all 0.4s ease-in-out;
+        }
+        .contact:hover , .get-in-touch:hover, .cta-button:hover{
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgb(155, 155, 155);
+            background-color: aqua;
+            transform: translateX(5px);
+            color: black;
+        }
+
+        .heading {
+            line-height: 2rem;
+        }
+        .heading h1 {
+            font-size: 40px;
+            font-weight: 600;
+            font-family: "Sora", sans-serif;
+        }
+        .heading p{
+            font-size: 16px;
+        }
+
+        section {
+            margin-top: 1%;
+            padding: 1% 5% 3%;
+            height: auto;
+        }
+
+        /*Pricing Section*/
+        .pricing-grid {
+            padding-top: 40px;
+            display: flex;
+            gap: 25px;
+        }
+        .pricing-grid h3 {
+            padding-top: 25px;
+            line-height: 0.5rem;
+            font-family: "Sora", sans-serif;
+        }
+        .small, .business, .ecom {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 70%;
+            border-radius: 25px;
+        }
+        .small {
+            background-color: #f7d412;
+        }
+        .business {
+            background-color: aqua;
+        }
+        .business .badge {
+            position: absolute;
+            margin-left: 11%;
+            margin-top: -25px;
+            background-color: blue;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        .ecom {
+            background-color: #0070f3;
+        }
+        .card-content {
+            justify-content: space-around;
+            padding: 0 40px 5px;
+        }
+        .price {
+            font-size: 25px;
+            font-family: "Sora", sans-serif;
+        }
+        .features {
+            border-top: 1px solid;
+            display: flex;
+            flex-direction: column;
+            text-wrap: wrap;
+            padding: 30px 10px 20px;
+        }
+        .features li {
+            list-style-type: none;
+            font-size: 15px;
+        }
+        .from {
+            font-size: 18px;
+            font-family: "Sora", sans-serif;
+        }
+
+        /*FAQs Section*/
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .faq-container h2 {
+            font-size: 30px;
+                font-family: "Sora", sans-serif;
+        }
+        .faq-item {
+            padding-bottom: 20px;
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            background: aqua;
+            border: none;
+            font-size: 16px;
+            border-bottom: 1px solid;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 650;
+        }
+        .faq-answer {
+            max-height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            background-color: #e5e7eb;
+        }
+        .faq-answer p {
+            padding: 10px 1rem;
+            color: black;
+            font-size: 15px;
+        }
+        .faq-item.active .faq-answer{
+            max-height: 200px;
+        }
+        .faq-item.active .icon {
+            transform: rotate(45deg);
+            transition: all 0.1s ease-out;
+        }
+
+        .addons .heading {
+            text-align: center;
+        }
+        .heading h2 {
+            font-size: 30px;
+            font-family: "Sora", sans-serif;
+        }
+        .extra-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .extra-list li {
+            list-style-type: none;
+            font-size: 16px;
+        }
+
+        .contact-section{
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            background-color: black;
+            padding: 0 50px 60px;
+            height: auto;
+            overflow: hidden;
+        }
+        .contact-section h3 {
+            font-family: "Sora", sans-serif;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                justify-content: space-around;
+                padding: 0 20px;
+            }
+
+            header .logo {
+                margin-left: 1.75%;
+                width: 100px;
+            }
+
+            .navbar {
+                display: flex;
+            }
+            .navbar ul li {
+                margin: 10px 18px;
+            }
+            .navbar ul li a {
+                font-size: 14px;
+            }
+
+            #menu-icon {
+                display: none;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .contact{
+                margin-right: 30%;
+                text-wrap: none;
+                display: inline-block;
+                padding: 10px 40px;
+                background-color: black;
+                border-radius: 80px;
+                font-size: 15px;
+                margin-top: 5px;
+                color: aqua;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+                font-weight: 500;
+                border: 2px solid aqua;
+                transition: all 0.4s ease-in-out;
+                text-wrap: none;
+            }
+            ul , li{
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                margin: 10px;
+                gap: 5px;
+                font-size: small;
+            }
+            .navbar{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: auto;
+            }
+            .get-in-touch, .cta-button{
+                display: inline-block;
+                padding: 15px 40px;
+                background-color: black;
+                border-radius: 80px;
+                font-size: 16px;
+                margin-top: 5px;
+                color: aqua;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+                font-weight: 500;
+                border: 2px solid aqua;
+                transition: all 0.4s ease-in-out;
+            }
+            .cta-button:hover{
+                transition: all 0.4s ease-in-out;
+                cursor: pointer;
+                box-shadow: 0 0 10px rgb(155, 155, 155);
+                background-color: aqua;
+                transform: translateX(5px);
+                color: black;
+            }
+
+            .heading h1 {
+                font-size: 35px;
+            }
+            .heading p {
+                font-size: 14px;
+            }
+            .pricing-grid h3 {
+                font-size: 18px;
+            }
+            .small, .business, .ecom {
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+                height: 70%;
+                border-radius: 25px;
+            }
+            .business .badge {
+                margin-left: 9%;
+                font-size: 0.8rem;
+            }
+            .price {
+                font-size: 20px;
+            }
+            .timeline, .subtitle {
+                font-size: 14px;
+            }
+            .features li {
+                font-size: 14px;
+            }
+
+            .faq-container h2 {
+                font-size: 28px;
+            }
+            .faq-question {
+                font-size: 15px;
+            }
+            .faq-answer p {
+                font-size: 13px;
+            }
+            .heading h2 {
+                font-size: 28px;
+            }
+            .heading h3 {
+                font-size: 18px;
+            }
+            .extra-list li {
+                font-size: 14px;
+            }
+            .contact-section h3 {
+                font-size: 18px;
+            }   
+        }
+
+        @media (max-width: 750px) {
+            body{
+                width: 100%;
+                overflow-x: hidden;
+            }
+            header {
+                justify-content: space-between;
+                padding: 0 10px;
+            }
+            .navbar {
+                display: none;
+            }
+            #menu-icon {
+                display: block;
+                margin-right: 5%;
+            }
+            .sidebar {
+                display: block;
+                left: -100%;
+                width: 230px;
+            }
+            .sidebar.active {
+                left: 0;
+            }
+            header .logo {
+                width: 90px;
+                margin-left: 5%;
+            }
+            .contact{
+                display: none;
+            }
+            .get-in-touch {
+                padding: 15px 30px;
+                font-size: 14px;
+            }
+            .sidebar-links a {
+                font-size: 15px;
+            }
+
+            .heading h1 {
+                font-size: 32px;
+            }
+            .heading p {
+                font-size: 13px;
+            }
+            .pricing-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+
+            }
+            .pricing-grid h3 {
+                font-size: 16px;
+            }
+            .small, .business, .ecom {
+                width: 350px;
+                height: 80%;
+            }
+            .business .badge {
+                margin-left: 12%;
+                font-size: 0.8rem;
+            }
+            .faq-container h2 {
+                font-size: 25px;
+            }
+            .faq-question {
+                font-size: 14px;
+            }
+            .faq-answer p {
+                font-size: 12px;
+            }
+            .heading h2 {
+                font-size: 25px;
+            }
+            .heading h3 {
+                font-size: 15px;
+            }
+            .extra-list li {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="file_00000000a71871f49415f578c30f0133 (2).png" class="logo" alt="Logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+        <div class="contact-button">
+            <a href="contact.html"><button class="contact">Contact Me</button></a>
+        </div>
+
+        <div class="menu-toggle" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+    <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="sidebar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </aside>
+    </header>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="heading">
+                <center><h1>Our Web Design Packages</h1></center>
+                <center><p>Simple, transparent pricing with no hidden fees. Choose a plan that fits your business goals.</p></center>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="small">
+                    <center><h3>Starter (Lite)</h3></center>
+                    <div class="card-content">
+                        <h4 class="price">Ksh 20,000</h4>
+                        <p class="subtitle">Best for side hustles & startups</p>
+                        <p class="timeline">Timeline: 5 - 7 Days</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Up to 3 Pages</li>
+                        <li><i class="fa-solid fa-check"></i> Free .co.ke Domain (1 Yr)</li>
+                        <li><i class="fa-solid fa-check"></i> Shared Web Hosting (1 Yr)</li>
+                        <li><i class="fa-solid fa-check"></i> Basic SEO Setup</li>
+                        <li><i class="fa-solid fa-check"></i> 30 Days Email Support</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> M-Pesa Integration</li>
+                    </ul>
+                </div>
+
+                <div class="business">
+                    
+                    <center><h3>Business Pro</h3></center>
+                    <center><span class="badge">Popular</span></center>
+                    <div class="card-content">
+                        <h4 class="price">Ksh 35,000</h4>                        
+                        <p class="subtitle">Best for growing companies & SMEs</p>
+                        <p class="timeline">Timeline: 10 - 14 Days</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Up to 8 Pages</li>
+                        <li><i class="fa-solid fa-check"></i> Free .co.ke Domain (1 Yr)</li>
+                        <li><i class="fa-solid fa-check"></i> High-Speed Hosting (1 Yr)</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced SEO Setup</li>
+                        <li><i class="fa-solid fa-check"></i> 60 Days Phone & WhatsApp Support</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> M-Pesa Integration</li>
+                    </ul>
+                </div>
+
+                <div class="ecom">
+                    <center><h3>E-Commerce</h3></center>
+                    <div class="card-content">
+                        <h4 class="price">KSh 50,000 +</h4>
+                        <p class="subtitle">Best for online shops & systems</p>
+                        <p class="timeline">Timeline: 21+ Days</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Unlimited Products / Pages</li>
+                        <li><i class="fa-solid fa-check"></i> Free .co.ke Domain (1 Yr)</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated/Cloud Hosting (1 Yr)</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced SEO + Schema Markup</li>
+                        <li><i class="fa-solid fa-check"></i> 6 Months Priority Support</li>
+                        <li><i class="fa-solid fa-check"></i> Automated M-Pesa STK Push</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faqs">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+            <div class="faqs-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there any annual renewal fees?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. After the 1st year, you'll only pay for our domain registration and web hosting. For a standard <strong>.co.ke</strong> domain and business hosting, it's usually <strong>Ksh.3500</strong> per year, depending on your package.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I pay in installments?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. I operate on a <strong>40% upfront</strong> before the project kicks off, <strong>40% on design approval</strong> and the remaining <strong>20% upon completion and testing</strong>, right before the website goes live.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Will my website work well on phones?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>100% yes. Most Kenyans browse the internet using smartphones. Every single website I build is <strong>fully responsive</strong>, meaning it will look stunning and be responsive across <strong>all devices</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you provide corporate emails?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Even on your starter plan, you get professional emails <strong>(e.g info@ourcompany.co.ke)</strong> to build trust with clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="addons">
+        <div class="addon-container">
+            <div class="heading">
+                <h2>Add-Ons and Extra Services</h2>
+                <h3>Need something specific? Customize our plan:</h3>
+            </div>
+            <div class="extras">
+                <ul class="extra-list">
+                    <li>Extra Page: <strong>Ksh.2,000 per page</strong></li>
+                    <li>M-Pesa Integration (For Non-ecommerce sites): <strong>Ksh.10,000</strong></li>
+                    <li>Website Redesign: <strong>20% of the package rate</strong></li>
+                    <li>Monthly Maintenance & Updates: <strong>Ksh.5,000 per month</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h3>Let's Build Something Amazing Together!</h3>
+        <div class="contact-container">
+            <a href="contact.html"><button class="get-in-touch">Let's Connect</button></a>
+        </div>
+    </section>
+
+</body>
+<script>
+// Smooth scroll to section
+    function smoothScroll(targetId) {
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+// Mobile menu toggle
+    function toggleMobileMenu() {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            sidebar.classList.toggle('active');
+        }
+    }
+
+// Sidebar event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-icon');
+        const sidebarClose = document.querySelector('.sidebar-close');
+        const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+        const sidebar = document.getElementById('sidebar');
+
+        // Toggle sidebar on hamburger click
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Close sidebar on X click
+        if (sidebarClose) {
+            sidebarClose.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+            });
+        }
+
+        // Close sidebar when a link is clicked
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+            });
+        });
+
+        // Close sidebar when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (sidebar && menuToggle) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnMenu = menuToggle.contains(event.target);
+                if (!isClickInsideSidebar && !isClickOnMenu && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
+            }
+        });
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            faqItem.classList.toggle('active');
+
+            document.querySelectorAll('faqItem').forEach(item => {
+                if (item !== faqItem) item.classList.remove('active');
+            });
+        });
+    });
+    });
+</script>
+</html>
