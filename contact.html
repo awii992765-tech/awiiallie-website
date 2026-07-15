@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My personal portfolio showcasing projects and skills.">
+    <meta name="description" content="My Personal Portfolio Showcasing Projects and Skills. I build modern, affordable and responsive websites for Kenyan businesses and also design any vehicle.">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link href="https://fonts.googleapis.com/css?family=Sora:100,200,300,regular,500,600,700,800" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Bruno+Ace+SC:regular" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>My Contact</title>
+    <title>Awii Creative | My Contacts</title>
     <style>
         @keyframes fadeIn {
     from { opacity: 0; }
@@ -236,7 +236,7 @@ li:hover{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 2%;
+    padding: 20px 40px;
     gap: 80px;
     height: auto;
 }
@@ -307,9 +307,7 @@ span{
     align-items: center;
     gap: 20px;
     background-color: rgb(54, 54, 54);
-    padding: 2%;
-    padding-bottom: 2%;
-    height: auto;
+    padding: 20px 30px;
     width: 400px;
     border-radius: 20px;
 }
@@ -330,9 +328,9 @@ span{
     resize: none;
 }
 .submit-button{
-    padding: 10px 30px;
+    padding: 10px 20px;
     color: rgb(54, 54, 54);
-    border: 2px solid aqua;
+    border: 1px solid aqua;
     border-radius: 15px;
     font-size: 16px;
     cursor: pointer;
@@ -352,6 +350,7 @@ span{
     display: flex;
     flex-direction: column;
     gap: 15px;
+
 }
 
 @media (max-width: 1440px) {
@@ -427,7 +426,7 @@ span{
 
     .contact-section {
         gap: 50px;
-        padding: 3%;
+        padding: 50px 40px;
     }
     .contact-section h2{
         font-size: 28px;
@@ -448,8 +447,9 @@ span{
         transition: all 0.3s ease-in-out;
     }
     .submit-button{
-
         font-size: 15px;
+        line-height: normal;
+        overflow: visible;
     }
     .socials a{
         width: 2.2rem;
@@ -458,6 +458,7 @@ span{
     }
     .contact-form{
         width: 320px;
+        
     }
     .contact-form input{
         height: 14px;
@@ -472,7 +473,6 @@ span{
 @media (max-width: 750px) {
     body{
         width: 100%;
-        margin: 0 auto;
         overflow-x: hidden;
     }
     header {
@@ -517,9 +517,10 @@ span{
     }
 
     .contact-section {
-        margin: 0 auto;
-        gap: 25px;
-        padding: 3%;
+        justify-content: space-around;
+        display: grid;
+        gap: 30px;
+        padding: 10px 20px 50px;
     }
     .contact-section h2{
         font-size: 24px;
@@ -541,26 +542,32 @@ span{
     }
     .submit-button{
         font-size: 13px;
-        height: 100px;
+        height: 40px;
     }
     .socials a{
         width: 1.6rem;
         height: 1.6rem;
         font-size: 15px;
     }
+    .contact-info {
+        text-align: center;
+        align-items: center;
+        line-height: normal;
+        justify-content: center;
+    }
     .contact-message{
-        width: 300px;
+        width: 250px;
         height: 400px;
     }
     .contact-form{
-        width: 280px;
+        width: 230px;
     }
     .contact-form input{
         height: 16px;
-        width: 260px;
+        width: 210px;
     }
     .contact-form textarea{
-        width: 260px;
+        width: 210px;
         height: 80px;
     }
 }
@@ -618,7 +625,7 @@ span{
             <div class="contact-card">
                 <h3>Find Me On</h3>
                 <div class="socials">
-                    <a href="https://www.instagram.com/allie_.992/" class="social"><i
+                    <a href="https://www.instagram.com/awii_allie/" class="social"><i
                         class="fa-brands fa-instagram"></i></a>  
                     <a href="#" class="social"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#" class="social"><i class="fa-brands fa-linkedin"></i></a>
@@ -632,8 +639,13 @@ span{
             <input type="text" id="name" name="name" placeholder="Full Name" required>
             <input type="email" id="email" name="email" placeholder="Your Email" required>
             <input type="text" id="subject" name="subject" placeholder="Subject" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <center><input type="submit" value="Submit" class="submit-button"/></center>
+            <textarea
+                id="message"
+                name="Message" 
+                placeholder="Your Message"
+                required>
+            </textarea>
+            <button type="submit" class="submit-button">Submit</button>
         </form>
     </div>
 </section>
